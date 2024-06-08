@@ -1,0 +1,4 @@
+packages: .
+          ../cabal/Cabal-hooks/
+          ../cabal/Cabal-syntax/
+          ../cabal/Cabal/

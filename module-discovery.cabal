@@ -1,0 +1,45 @@
+cabal-version:      3.14
+name:               module-discovery
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Julian Ospald
+maintainer:         hasufell@posteo.de
+build-type:         Hooks
+
+custom-setup
+  setup-depends:
+    base        >= 4.18 && < 5,
+    Cabal-hooks >= 0.1  && < 0.2,
+    filepattern,
+    extra,
+    filepath
+
+extra-doc-files:    CHANGELOG.md
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    build-depends:    base ^>=4.18.2.1
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable module-discovery
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.18.2.1,
+        module-discovery
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite module-discovery-test
+    import:           warnings
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.18.2.1,
+        module-discovery
