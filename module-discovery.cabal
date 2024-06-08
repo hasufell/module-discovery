@@ -13,7 +13,8 @@ custom-setup
     Cabal-hooks >= 0.1  && < 0.2,
     filepattern,
     extra,
-    filepath
+    filepath,
+    containers
 
 extra-doc-files:    CHANGELOG.md
 common warnings
@@ -21,6 +22,7 @@ common warnings
 
 library
     import:           warnings
+    exposed-modules:  MyLib
     build-depends:    base ^>=4.18.2.1
     hs-source-dirs:   src
     default-language: Haskell2010
